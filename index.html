@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Giftastic</title>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="/Users/Jaymar/SMU_HW/week5/TriviaGame/assets/css/style.css"> -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+
+
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>The Magical Cat Button</title>
+
+  </head>
+  <br>
+  <button type="button" name="button">Magical Cat Button</button>
+  <br>
+  <br>
+  <br>
+  <div class="ImageArea">
+  </div>
+
+  <body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      // "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
+
+      $('button').on('click', function() {
+        event.preventDefault();
+
+        var url_to_go_to = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
+
+        $.ajax({
+          url: url_to_go_to,
+        }).then(function(response) {
+          // console.log(response);
+          console.log(response.data.image_original_url);
+          var img = $('<img>'); //<img></img>
+
+          img.attr('src', response.data.image_original_url);
+
+          $('.ImageArea').html(img);
+        });
+      });
+    </script>
+    <!-- jQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- TRIVIA APP JS -->
+    <script src="./assets/javascript/app.js"></script>
+  </body>
+
+  </html>
+</body>
+
+</html>
