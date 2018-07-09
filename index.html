@@ -1,67 +1,63 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Giftastic</title>
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="/Users/Jaymar/SMU_HW/week5/TriviaGame/assets/css/style.css"> -->
-  <link rel="stylesheet" href="./assets/css/styles.css">
-
-
+	<title>AJAX Giphy Button Review</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
-<body>
-  <!DOCTYPE html>
-  <html lang="en">
+<body id="wholeThing">
 
-  <head>
-    <meta charset="utf-8">
-    <title>The Magical Cat Button</title>
+	<div class="jumbotron" id="header">
 
-  </head>
-  <br>
-  <button type="button" name="button">Magical Cat Button</button>
-  <br>
-  <br>
-  <br>
-  <div class="ImageArea">
-  </div>
+		<h1>SUPERHEROES</h1>
+		<h4>Click the buttons to display GIPHYs of your favorite superheroes <br>Click the GIPHYs to pause and play<br>Search to add more buttons!</h4>
+	</div>
 
-  <body>
+	<form class="form-inline" id="superheroSearch">
+		<div class="form-group">
+			<label for="superheroInput">Search for a superhero</label>
+			<input type="text" id="superheroInput">
+		</div>
+		<!-- Button triggers show to be added -->
+		<input id="addShow" type="submit" value="submit">
+	</form>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-      // "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
+	<div class="row">
+		<div class="container">
+			<div class="btn-group inline pull-left">
+				<button class="btn btn-primary" id="show" data-search="Hulk">Hulk</button>
+				<button class="btn btn-primary" id="show" data-search="Wonder Woman">Wonder Woman</button>
+				<button class="btn btn-primary" id="show" data-search="Thor">Thor</button>
+				<button class="btn btn-primary" id="show" data-search="Jean Grey">Jean Grey</button>
+				<button class="btn btn-primary" id="show" data-search="Rocket Raccoon">Rocket Raccoon</button>
 
-      $('button').on('click', function() {
-        event.preventDefault();
+				<div id="myButtons"></div>
+			</div>
+			<!--end of button group -->
+		</div>
+		<!--end of container -->
+	</div>
+	<!--end of row -->
 
-        var url_to_go_to = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
 
-        $.ajax({
-          url: url_to_go_to,
-        }).then(function(response) {
-          // console.log(response);
-          console.log(response.data.image_original_url);
-          var img = $('<img>'); //<img></img>
+	<div class="row">
+		<div class="container">
+			<span><div id="gifArea"></div></span>
+		</div>
+		<!--end of container -->
+	</div>
+	<!-- end of row  -->
 
-          img.attr('src', response.data.image_original_url);
 
-          $('.ImageArea').html(img);
-        });
-      });
-    </script>
-    <!-- jQuery CDN-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- TRIVIA APP JS -->
-    <script src="./assets/javascript/app.js"></script>
-  </body>
+	<script type="text/javascript" src="assets/javascript/app.js" </script>
+		< script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" >
+	</script>
 
-  </html>
 </body>
 
 </html>

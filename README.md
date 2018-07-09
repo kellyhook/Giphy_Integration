@@ -1,2 +1,2 @@
-# Giphy_Integration
-simple webpage with giphy API integration
+# HW6 - {GiphyAPI - GifTastic}
+Homework for UC Berkeley Coding BootCamp.
